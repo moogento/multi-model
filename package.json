@@ -1,0 +1,15 @@
+{
+  "name": "moogento-multi-model",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test scripts/multi-model/test/*.test.js && python3 -m unittest discover -s scripts/multi-model/test -p '*_test.py'"
+  },
+  "dependencies": {
+    "dotenv": "^16.6.1"
+  }
+}

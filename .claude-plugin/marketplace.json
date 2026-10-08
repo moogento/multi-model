@@ -1,0 +1,13 @@
+{
+  "name": "multi-model",
+  "owner": {
+    "name": "Moogento"
+  },
+  "plugins": [
+    {
+      "name": "multi-model",
+      "source": "./",
+      "description": "Advisory model drafts and reviews"
+    }
+  ]
+}

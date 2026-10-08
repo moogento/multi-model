@@ -1,0 +1,7 @@
+node_modules/
+.secrets/
+.env*
+.claude/multi-model/
+.codex/multi-model/
+.temp/
+__pycache__/

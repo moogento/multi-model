@@ -1,0 +1,566 @@
+{
+  "providers": {
+    "deepseek": {
+      "baseUrlEnv": "DEEPSEEK_BASE_URL",
+      "defaultBaseUrl": "https://api.deepseek.com",
+      "apiKeyEnv": "DEEPSEEK_API_KEY",
+      "modelEnv": "DEEPSEEK_MODEL",
+      "defaultModel": "deepseek-v4-flash",
+      "maxInputCharsEnv": "DEEPSEEK_MAX_INPUT_CHARS",
+      "maxInputChars": 300000,
+      "reviewMaxInputChars": 180000,
+      "reviewMaxOutputTokens": 8192,
+      "contextWindowTokens": 1000000,
+      "estimatedCharsPerToken": 3,
+      "maxOutputTokensEnv": "DEEPSEEK_MAX_OUTPUT_TOKENS",
+      "maxOutputTokens": 32768,
+      "timeoutMsEnv": "DEEPSEEK_TIMEOUT_MS",
+      "retriesEnv": "DEEPSEEK_RETRIES",
+      "retryDelayMsEnv": "DEEPSEEK_RETRY_DELAY_MS",
+      "timeoutMs": 60000,
+      "retries": 1,
+      "retryDelayMs": 2000,
+      "fallbackProvider": "deepseek-openrouter",
+      "reviewExtraBody": {
+        "thinking": { "type": "disabled" },
+        "response_format": { "type": "json_object" }
+      },
+      "pricing": { "inputPerMTok": 0.3, "outputPerMTok": 1.2, "cachedInputPerMTok": 0.006 }
+    },
+    "deepseek-pro": {
+      "baseUrlEnv": "DEEPSEEK_BASE_URL",
+      "defaultBaseUrl": "https://api.deepseek.com",
+      "apiKeyEnv": "DEEPSEEK_API_KEY",
+      "modelEnv": "DEEPSEEK_PRO_MODEL",
+      "defaultModel": "deepseek-v4-pro",
+      "maxInputCharsEnv": "DEEPSEEK_PRO_MAX_INPUT_CHARS",
+      "maxInputChars": 400000,
+      "reviewMaxInputChars": 240000,
+      "reviewMaxOutputTokens": 8192,
+      "contextWindowTokens": 1000000,
+      "estimatedCharsPerToken": 3,
+      "maxOutputTokensEnv": "DEEPSEEK_PRO_MAX_OUTPUT_TOKENS",
+      "maxOutputTokens": 32768,
+      "timeoutMsEnv": "DEEPSEEK_PRO_TIMEOUT_MS",
+      "retriesEnv": "DEEPSEEK_PRO_RETRIES",
+      "retryDelayMsEnv": "DEEPSEEK_PRO_RETRY_DELAY_MS",
+      "timeoutMs": 120000,
+      "retries": 1,
+      "retryDelayMs": 2000,
+      "fallbackProvider": "deepseek-pro-openrouter",
+      "reviewExtraBody": {
+        "thinking": { "type": "disabled" },
+        "response_format": { "type": "json_object" }
+      },
+      "pricing": { "inputPerMTok": 1.32, "outputPerMTok": 3.96, "cachedInputPerMTok": 0.044 },
+      "reviewFanout": false
+    },
+    "deepseek-flash": {
+      "baseUrlEnv": "DEEPSEEK_BASE_URL",
+      "defaultBaseUrl": "https://api.deepseek.com",
+      "apiKeyEnv": "DEEPSEEK_API_KEY",
+      "modelEnv": "DEEPSEEK_FLASH_MODEL",
+      "defaultModel": "deepseek-flash",
+      "maxInputCharsEnv": "DEEPSEEK_FLASH_MAX_INPUT_CHARS",
+      "maxInputChars": 400000,
+      "reviewMaxInputChars": 240000,
+      "reviewMaxOutputTokens": 8192,
+      "contextWindowTokens": 1000000,
+      "estimatedCharsPerToken": 3,
+      "maxOutputTokensEnv": "DEEPSEEK_FLASH_MAX_OUTPUT_TOKENS",
+      "maxOutputTokens": 32768,
+      "timeoutMsEnv": "DEEPSEEK_FLASH_TIMEOUT_MS",
+      "retriesEnv": "DEEPSEEK_FLASH_RETRIES",
+      "retryDelayMsEnv": "DEEPSEEK_FLASH_RETRY_DELAY_MS",
+      "timeoutMs": 120000,
+      "retries": 1,
+      "retryDelayMs": 2000,
+      "fallbackProvider": "deepseek-openrouter",
+      "reviewExtraBody": {
+        "thinking": { "type": "disabled" },
+        "response_format": { "type": "json_object" }
+      },
+      "pricing": { "inputPerMTok": 0.3, "outputPerMTok": 1.2, "cachedInputPerMTok": 0.006 },
+      "reviewFanout": false
+    },
+    "glm": {
+      "baseUrlEnv": "GLM_BASE_URL",
+      "defaultBaseUrl": "https://api.z.ai/api/coding/paas/v4",
+      "apiKeyEnv": "GLM_API_KEY",
+      "modelEnv": "GLM_MODEL",
+      "defaultModel": "glm-5.3-flash",
+      "maxInputCharsEnv": "GLM_MAX_INPUT_CHARS",
+      "maxInputChars": 600000,
+      "reviewMaxInputChars": 240000,
+      "reviewMaxOutputTokens": 8192,
+      "contextWindowTokens": 1000000,
+      "estimatedCharsPerToken": 3,
+      "timeoutMsEnv": "GLM_TIMEOUT_MS",
+      "retriesEnv": "GLM_RETRIES",
+      "retryDelayMsEnv": "GLM_RETRY_DELAY_MS",
+      "timeoutMs": 300000,
+      "retries": 2,
+      "retryDelayMs": 10000,
+      "fallbackProvider": "glm-53-openrouter",
+      "requestIdPrefix": "mm-glm",
+      "headers": {
+        "Accept-Language": {
+          "env": "GLM_ACCEPT_LANGUAGE",
+          "default": "en-US,en"
+        }
+      },
+      "extraBody": {
+        "reasoning_effort": {
+          "env": "GLM_REASONING_EFFORT",
+          "default": "max"
+        },
+        "thinking": {
+          "type": "enabled",
+          "clear_thinking": true
+        }
+      },
+      "reviewExtraBody": {
+        "reasoning_effort": "low",
+        "response_format": {
+          "type": "json_object"
+        }
+      },
+      "billing": "subscription",
+      "pricing": { "inputPerMTok": 0.075, "outputPerMTok": 0.25 }
+    },
+    "glm-openrouter": {
+      "baseUrlEnv": "OPENROUTER_BASE_URL",
+      "defaultBaseUrl": "https://openrouter.ai/api/v1",
+      "apiKeyEnv": "OPENROUTER_API_KEY",
+      "modelEnv": "OPENROUTER_GLM_MODEL",
+      "defaultModel": "z-ai/glm-5.3-flash",
+      "maxInputCharsEnv": "OPENROUTER_GLM_MAX_INPUT_CHARS",
+      "maxInputChars": 600000,
+      "reviewMaxInputChars": 240000,
+      "reviewMaxOutputTokens": 8192,
+      "timeoutMsEnv": "OPENROUTER_GLM_TIMEOUT_MS",
+      "retriesEnv": "OPENROUTER_GLM_RETRIES",
+      "retryDelayMsEnv": "OPENROUTER_GLM_RETRY_DELAY_MS",
+      "timeoutMs": 180000,
+      "retries": 1,
+      "retryDelayMs": 3000,
+      "headers": {
+        "HTTP-Referer": {
+          "env": "OPENROUTER_HTTP_REFERER",
+          "default": "https://m2-moogento.com"
+        },
+        "X-OpenRouter-Title": {
+          "env": "OPENROUTER_APP_TITLE",
+          "default": "Moogento multi-model"
+        }
+      },
+      "extraBody": {
+        "provider": {
+          "order": ["z-ai"],
+          "only": ["z-ai"],
+          "allow_fallbacks": false,
+          "require_parameters": true
+        }
+      },
+      "reviewExtraBody": {
+        "reasoning_effort": "low",
+        "response_format": { "type": "json_object" }
+      },
+      "pricing": { "inputPerMTok": 0.04, "outputPerMTok": 0.5 },
+      "reviewFanout": false
+    },
+    "deepseek-openrouter": {
+      "baseUrlEnv": "OPENROUTER_BASE_URL",
+      "defaultBaseUrl": "https://openrouter.ai/api/v1",
+      "apiKeyEnv": "OPENROUTER_API_KEY",
+      "modelEnv": "OPENROUTER_DEEPSEEK_MODEL",
+      "defaultModel": "deepseek/deepseek-v4.1-flash",
+      "maxInputCharsEnv": "OPENROUTER_DEEPSEEK_MAX_INPUT_CHARS",
+      "maxInputChars": 300000,
+      "reviewMaxInputChars": 180000,
+      "reviewMaxOutputTokens": 8192,
+      "contextWindowTokens": 1000000,
+      "estimatedCharsPerToken": 3,
+      "maxOutputTokensEnv": "OPENROUTER_DEEPSEEK_MAX_OUTPUT_TOKENS",
+      "maxOutputTokens": 32768,
+      "timeoutMsEnv": "OPENROUTER_DEEPSEEK_TIMEOUT_MS",
+      "retriesEnv": "OPENROUTER_DEEPSEEK_RETRIES",
+      "retryDelayMsEnv": "OPENROUTER_DEEPSEEK_RETRY_DELAY_MS",
+      "timeoutMs": 180000,
+      "retries": 1,
+      "retryDelayMs": 3000,
+      "headers": {
+        "HTTP-Referer": {
+          "env": "OPENROUTER_HTTP_REFERER",
+          "default": "https://m2-moogento.com"
+        },
+        "X-OpenRouter-Title": {
+          "env": "OPENROUTER_APP_TITLE",
+          "default": "Moogento multi-model"
+        }
+      },
+      "extraBody": {
+        "provider": {
+          "sort": "throughput",
+          "allow_fallbacks": true,
+          "require_parameters": true
+        }
+      },
+      "reviewExtraBody": {
+        "reasoning": { "enabled": false },
+        "response_format": { "type": "json_object" }
+      },
+      "pricing": { "inputPerMTok": 0.3, "outputPerMTok": 1.2 },
+      "reviewFanout": false,
+      "configCheck": false
+    },
+    "deepseek-pro-openrouter": {
+      "baseUrlEnv": "OPENROUTER_BASE_URL",
+      "defaultBaseUrl": "https://openrouter.ai/api/v1",
+      "apiKeyEnv": "OPENROUTER_API_KEY",
+      "modelEnv": "OPENROUTER_DEEPSEEK_PRO_MODEL",
+      "defaultModel": "deepseek/deepseek-v4-pro-0813",
+      "maxInputCharsEnv": "OPENROUTER_DEEPSEEK_PRO_MAX_INPUT_CHARS",
+      "maxInputChars": 400000,
+      "reviewMaxInputChars": 240000,
+      "reviewMaxOutputTokens": 8192,
+      "contextWindowTokens": 1000000,
+      "estimatedCharsPerToken": 3,
+      "maxOutputTokensEnv": "OPENROUTER_DEEPSEEK_PRO_MAX_OUTPUT_TOKENS",
+      "maxOutputTokens": 32768,
+      "timeoutMsEnv": "OPENROUTER_DEEPSEEK_PRO_TIMEOUT_MS",
+      "retriesEnv": "OPENROUTER_DEEPSEEK_PRO_RETRIES",
+      "retryDelayMsEnv": "OPENROUTER_DEEPSEEK_PRO_RETRY_DELAY_MS",
+      "timeoutMs": 180000,
+      "retries": 1,
+      "retryDelayMs": 3000,
+      "headers": {
+        "HTTP-Referer": {
+          "env": "OPENROUTER_HTTP_REFERER",
+          "default": "https://m2-moogento.com"
+        },
+        "X-OpenRouter-Title": {
+          "env": "OPENROUTER_APP_TITLE",
+          "default": "Moogento multi-model"
+        }
+      },
+      "extraBody": {
+        "provider": {
+          "sort": "throughput",
+          "allow_fallbacks": true,
+          "require_parameters": true
+        }
+      },
+      "reviewExtraBody": {
+        "reasoning": { "enabled": false },
+        "response_format": { "type": "json_object" }
+      },
+      "pricing": { "inputPerMTok": 1.32, "outputPerMTok": 3.96 },
+      "reviewFanout": false,
+      "configCheck": false
+    },
+    "glm-53-openrouter": {
+      "baseUrlEnv": "OPENROUTER_BASE_URL",
+      "defaultBaseUrl": "https://openrouter.ai/api/v1",
+      "apiKeyEnv": "OPENROUTER_API_KEY",
+      "modelEnv": "OPENROUTER_GLM53_MODEL",
+      "defaultModel": "z-ai/glm-5.3-flash",
+      "maxInputCharsEnv": "OPENROUTER_GLM53_MAX_INPUT_CHARS",
+      "maxInputChars": 600000,
+      "reviewMaxInputChars": 240000,
+      "reviewMaxOutputTokens": 8192,
+      "timeoutMsEnv": "OPENROUTER_GLM53_TIMEOUT_MS",
+      "retriesEnv": "OPENROUTER_GLM53_RETRIES",
+      "retryDelayMsEnv": "OPENROUTER_GLM53_RETRY_DELAY_MS",
+      "timeoutMs": 300000,
+      "retries": 1,
+      "retryDelayMs": 3000,
+      "headers": {
+        "HTTP-Referer": {
+          "env": "OPENROUTER_HTTP_REFERER",
+          "default": "https://m2-moogento.com"
+        },
+        "X-OpenRouter-Title": {
+          "env": "OPENROUTER_APP_TITLE",
+          "default": "Moogento multi-model"
+        }
+      },
+      "extraBody": {
+        "provider": {
+          "sort": "throughput",
+          "allow_fallbacks": true,
+          "require_parameters": true
+        }
+      },
+      "reviewExtraBody": {
+        "reasoning_effort": "low",
+        "response_format": { "type": "json_object" }
+      },
+      "pricing": { "inputPerMTok": 0.04, "outputPerMTok": 0.5 },
+      "reviewFanout": false,
+      "configCheck": false
+    },
+    "glm-free-openrouter": {
+      "baseUrlEnv": "OPENROUTER_BASE_URL",
+      "defaultBaseUrl": "https://openrouter.ai/api/v1",
+      "apiKeyEnv": "OPENROUTER_API_KEY",
+      "modelEnv": "OPENROUTER_GLM_FREE_MODEL",
+      "defaultModel": "z-ai/glm-5.2:free",
+      "maxInputCharsEnv": "OPENROUTER_GLM_FREE_MAX_INPUT_CHARS",
+      "maxInputChars": 150000,
+      "timeoutMsEnv": "OPENROUTER_GLM_FREE_TIMEOUT_MS",
+      "retriesEnv": "OPENROUTER_GLM_FREE_RETRIES",
+      "retryDelayMsEnv": "OPENROUTER_GLM_FREE_RETRY_DELAY_MS",
+      "timeoutMs": 180000,
+      "retries": 1,
+      "retryDelayMs": 10000,
+      "headers": {
+        "HTTP-Referer": {
+          "env": "OPENROUTER_HTTP_REFERER",
+          "default": "https://m2-moogento.com"
+        },
+        "X-OpenRouter-Title": {
+          "env": "OPENROUTER_APP_TITLE",
+          "default": "Moogento multi-model"
+        }
+      },
+      "extraBody": {
+        "provider": {
+          "sort": "throughput",
+          "allow_fallbacks": true,
+          "require_parameters": true
+        }
+      },
+      "pricing": { "inputPerMTok": 0, "outputPerMTok": 0 },
+      "reviewFanout": false,
+      "configCheck": false
+    },
+    "minimax-openrouter": {
+      "baseUrlEnv": "OPENROUTER_BASE_URL",
+      "defaultBaseUrl": "https://openrouter.ai/api/v1",
+      "apiKeyEnv": "OPENROUTER_API_KEY",
+      "modelEnv": "OPENROUTER_MINIMAX_MODEL",
+      "defaultModel": "minimax/minimax-m3",
+      "maxInputCharsEnv": "OPENROUTER_MINIMAX_MAX_INPUT_CHARS",
+      "maxInputChars": 220000,
+      "timeoutMsEnv": "OPENROUTER_MINIMAX_TIMEOUT_MS",
+      "retriesEnv": "OPENROUTER_MINIMAX_RETRIES",
+      "retryDelayMsEnv": "OPENROUTER_MINIMAX_RETRY_DELAY_MS",
+      "timeoutMs": 180000,
+      "retries": 1,
+      "retryDelayMs": 3000,
+      "headers": {
+        "HTTP-Referer": {
+          "env": "OPENROUTER_HTTP_REFERER",
+          "default": "https://m2-moogento.com"
+        },
+        "X-OpenRouter-Title": {
+          "env": "OPENROUTER_APP_TITLE",
+          "default": "Moogento multi-model"
+        }
+      },
+      "extraBody": {
+        "provider": {
+          "sort": "throughput",
+          "allow_fallbacks": true,
+          "require_parameters": true
+        }
+      },
+      "pricing": { "inputPerMTok": 0.3, "outputPerMTok": 1.2 },
+      "reviewFanout": false,
+      "configCheck": false
+    },
+    "kimi-openrouter": {
+      "baseUrlEnv": "OPENROUTER_BASE_URL",
+      "defaultBaseUrl": "https://openrouter.ai/api/v1",
+      "apiKeyEnv": "OPENROUTER_API_KEY",
+      "modelEnv": "OPENROUTER_KIMI_MODEL",
+      "defaultModel": "moonshotai/kimi-k2.7-code",
+      "maxInputCharsEnv": "OPENROUTER_KIMI_MAX_INPUT_CHARS",
+      "maxInputChars": 200000,
+      "timeoutMsEnv": "OPENROUTER_KIMI_TIMEOUT_MS",
+      "retriesEnv": "OPENROUTER_KIMI_RETRIES",
+      "retryDelayMsEnv": "OPENROUTER_KIMI_RETRY_DELAY_MS",
+      "timeoutMs": 180000,
+      "retries": 1,
+      "retryDelayMs": 3000,
+      "headers": {
+        "HTTP-Referer": {
+          "env": "OPENROUTER_HTTP_REFERER",
+          "default": "https://m2-moogento.com"
+        },
+        "X-OpenRouter-Title": {
+          "env": "OPENROUTER_APP_TITLE",
+          "default": "Moogento multi-model"
+        }
+      },
+      "extraBody": {
+        "provider": {
+          "sort": "throughput",
+          "allow_fallbacks": true,
+          "require_parameters": true
+        }
+      },
+      "pricing": { "inputPerMTok": 0.74, "outputPerMTok": 3.5 },
+      "reviewFanout": false,
+      "configCheck": false
+    },
+    "qwen-coder-openrouter": {
+      "baseUrlEnv": "OPENROUTER_BASE_URL",
+      "defaultBaseUrl": "https://openrouter.ai/api/v1",
+      "apiKeyEnv": "OPENROUTER_API_KEY",
+      "modelEnv": "OPENROUTER_QWEN_CODER_MODEL",
+      "defaultModel": "qwen/qwen3-coder",
+      "maxInputCharsEnv": "OPENROUTER_QWEN_CODER_MAX_INPUT_CHARS",
+      "maxInputChars": 220000,
+      "timeoutMsEnv": "OPENROUTER_QWEN_CODER_TIMEOUT_MS",
+      "retriesEnv": "OPENROUTER_QWEN_CODER_RETRIES",
+      "retryDelayMsEnv": "OPENROUTER_QWEN_CODER_RETRY_DELAY_MS",
+      "timeoutMs": 180000,
+      "retries": 1,
+      "retryDelayMs": 3000,
+      "headers": {
+        "HTTP-Referer": {
+          "env": "OPENROUTER_HTTP_REFERER",
+          "default": "https://m2-moogento.com"
+        },
+        "X-OpenRouter-Title": {
+          "env": "OPENROUTER_APP_TITLE",
+          "default": "Moogento multi-model"
+        }
+      },
+      "extraBody": {
+        "provider": {
+          "sort": "throughput",
+          "allow_fallbacks": true,
+          "require_parameters": true
+        }
+      },
+      "pricing": { "inputPerMTok": 0.22, "outputPerMTok": 1.8 },
+      "reviewFanout": false,
+      "configCheck": false
+    },
+    "nemotron-free-openrouter": {
+      "baseUrlEnv": "OPENROUTER_BASE_URL",
+      "defaultBaseUrl": "https://openrouter.ai/api/v1",
+      "apiKeyEnv": "OPENROUTER_API_KEY",
+      "modelEnv": "OPENROUTER_NEMOTRON_FREE_MODEL",
+      "defaultModel": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "maxInputCharsEnv": "OPENROUTER_NEMOTRON_FREE_MAX_INPUT_CHARS",
+      "maxInputChars": 150000,
+      "timeoutMsEnv": "OPENROUTER_NEMOTRON_FREE_TIMEOUT_MS",
+      "retriesEnv": "OPENROUTER_NEMOTRON_FREE_RETRIES",
+      "retryDelayMsEnv": "OPENROUTER_NEMOTRON_FREE_RETRY_DELAY_MS",
+      "timeoutMs": 180000,
+      "retries": 0,
+      "retryDelayMs": 3000,
+      "headers": {
+        "HTTP-Referer": {
+          "env": "OPENROUTER_HTTP_REFERER",
+          "default": "https://m2-moogento.com"
+        },
+        "X-OpenRouter-Title": {
+          "env": "OPENROUTER_APP_TITLE",
+          "default": "Moogento multi-model"
+        }
+      },
+      "extraBody": {
+        "provider": {
+          "sort": "throughput",
+          "allow_fallbacks": true,
+          "require_parameters": true
+        }
+      },
+      "pricing": { "inputPerMTok": 0, "outputPerMTok": 0 },
+      "reviewFanout": false,
+      "configCheck": false
+    },
+    "poolside-free-openrouter": {
+      "baseUrlEnv": "OPENROUTER_BASE_URL",
+      "defaultBaseUrl": "https://openrouter.ai/api/v1",
+      "apiKeyEnv": "OPENROUTER_API_KEY",
+      "modelEnv": "OPENROUTER_POOLSIDE_FREE_MODEL",
+      "defaultModel": "poolside/laguna-m.1:free",
+      "maxInputCharsEnv": "OPENROUTER_POOLSIDE_FREE_MAX_INPUT_CHARS",
+      "maxInputChars": 150000,
+      "timeoutMsEnv": "OPENROUTER_POOLSIDE_FREE_TIMEOUT_MS",
+      "retriesEnv": "OPENROUTER_POOLSIDE_FREE_RETRIES",
+      "retryDelayMsEnv": "OPENROUTER_POOLSIDE_FREE_RETRY_DELAY_MS",
+      "timeoutMs": 180000,
+      "retries": 0,
+      "retryDelayMs": 3000,
+      "headers": {
+        "HTTP-Referer": {
+          "env": "OPENROUTER_HTTP_REFERER",
+          "default": "https://m2-moogento.com"
+        },
+        "X-OpenRouter-Title": {
+          "env": "OPENROUTER_APP_TITLE",
+          "default": "Moogento multi-model"
+        }
+      },
+      "extraBody": {
+        "provider": {
+          "sort": "throughput",
+          "allow_fallbacks": true,
+          "require_parameters": true
+        }
+      },
+      "pricing": { "inputPerMTok": 0, "outputPerMTok": 0 },
+      "reviewFanout": false,
+      "configCheck": false
+    },
+    "north-code-free-openrouter": {
+      "baseUrlEnv": "OPENROUTER_BASE_URL",
+      "defaultBaseUrl": "https://openrouter.ai/api/v1",
+      "apiKeyEnv": "OPENROUTER_API_KEY",
+      "modelEnv": "OPENROUTER_NORTH_CODE_FREE_MODEL",
+      "defaultModel": "cohere/north-mini-code:free",
+      "maxInputCharsEnv": "OPENROUTER_NORTH_CODE_FREE_MAX_INPUT_CHARS",
+      "maxInputChars": 150000,
+      "timeoutMsEnv": "OPENROUTER_NORTH_CODE_FREE_TIMEOUT_MS",
+      "retriesEnv": "OPENROUTER_NORTH_CODE_FREE_RETRIES",
+      "retryDelayMsEnv": "OPENROUTER_NORTH_CODE_FREE_RETRY_DELAY_MS",
+      "timeoutMs": 180000,
+      "retries": 0,
+      "retryDelayMs": 3000,
+      "headers": {
+        "HTTP-Referer": {
+          "env": "OPENROUTER_HTTP_REFERER",
+          "default": "https://m2-moogento.com"
+        },
+        "X-OpenRouter-Title": {
+          "env": "OPENROUTER_APP_TITLE",
+          "default": "Moogento multi-model"
+        }
+      },
+      "extraBody": {
+        "provider": {
+          "sort": "throughput",
+          "allow_fallbacks": true,
+          "require_parameters": true
+        }
+      },
+      "pricing": { "inputPerMTok": 0, "outputPerMTok": 0 },
+      "reviewFanout": false,
+      "configCheck": false
+    }
+  },
+  "roles": {
+    "planning": "deepseek",
+    "implementation": "deepseek-pro",
+    "critique": "glm",
+    "documentation": "glm",
+    "explanation": "glm",
+    "benchmark": ["deepseek", "glm"],
+    "reviewSubstitute": ["deepseek-flash", "deepseek-pro"]
+  },
+  "benchmarkPresets": {
+    "default": ["deepseek", "glm"],
+    "guardrailed": ["deepseek-openrouter", "deepseek-pro-openrouter", "glm-53-openrouter", "glm-free-openrouter"],
+    "openrouter-cheap": ["minimax-openrouter", "kimi-openrouter", "qwen-coder-openrouter"],
+    "openrouter-free": ["nemotron-free-openrouter", "poolside-free-openrouter", "north-code-free-openrouter"],
+    "openrouter-all": ["glm-openrouter", "minimax-openrouter", "kimi-openrouter", "qwen-coder-openrouter", "nemotron-free-openrouter", "poolside-free-openrouter", "north-code-free-openrouter"],
+    "cost-control": ["deepseek", "deepseek-flash", "deepseek-pro", "minimax-openrouter", "qwen-coder-openrouter"]
+  }
+}

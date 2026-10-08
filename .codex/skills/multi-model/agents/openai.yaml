@@ -1,0 +1,4 @@
+interface:
+  display_name: "Multi-Model Assist"
+  short_description: "Use DeepSeek and GLM as advisory helpers"
+  default_prompt: "Use $multi-model to get a guarded alternative-model draft or second-opinion review for this task."

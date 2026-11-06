@@ -3,6 +3,7 @@ description: Draft README/docs/comment content with the configured documentation
 argument-hint: [task-description] --files path1,path2 [--mode diff|markdown]
 allowed-tools: Read, Write, Edit, Glob, Grep, Bash(node scripts/multi-model/docs.js:*), Bash(node scripts/multi-model/apply-guarded-diff.js:*), Bash(node scripts/multi-model/log-outcome.js:*)
 model: sonnet
+effort: medium
 ---
 
 # Multi-Model Docs Draft

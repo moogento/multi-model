@@ -3,6 +3,7 @@ description: Run the same prompt against every configured provider and compare l
 argument-hint: [task-description] [--providers deepseek,glm]
 allowed-tools: Bash(node scripts/multi-model/benchmark.js:*)
 model: haiku
+effort: medium
 ---
 
 # Multi-Model Benchmark

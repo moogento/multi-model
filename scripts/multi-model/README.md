@@ -427,7 +427,7 @@ stand-in agent when Codex/Claude limits are exhausted, not as a way to run `/mm-
   `deepseek/deepseek-v4.1-flash` for difficult long-horizon coding sessions and
   `deepseek/deepseek-v4-flash` for everyday overflow.
 - Match the model to the task even inside a subscription: mechanical chained commands
-  (commit messages, formatting passes) belong on the cheap tier (Codex terra/medium
+  (commit messages, formatting passes) belong on the cheap tier (Codex `gpt-6.1-terra` at medium
   effort, or a flash-class model), with the expensive tier reserved for planning,
   review, and hard implementation.
 

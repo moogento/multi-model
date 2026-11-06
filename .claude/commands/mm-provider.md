@@ -3,6 +3,7 @@ description: Show configured multi-model providers, selected models, which API k
 argument-hint: (no arguments)
 allowed-tools: Bash(node scripts/multi-model/provider-status.js:*)
 model: haiku
+effort: medium
 ---
 
 # Multi-Model Provider Status

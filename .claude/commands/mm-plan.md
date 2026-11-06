@@ -3,6 +3,7 @@ description: Get a cheap first-pass implementation plan from the configured plan
 argument-hint: [task-description] --files path1,path2
 allowed-tools: Read, Glob, Grep, Bash(node scripts/multi-model/cheap-plan.js:*), Bash(node scripts/multi-model/log-outcome.js:*)
 model: sonnet
+effort: medium
 ---
 
 # Multi-Model Plan Draft

@@ -3,6 +3,7 @@ description: Run the same task/review through every configured provider and comp
 argument-hint: [task-description] [--diff path]
 allowed-tools: Read, Bash(git diff:*), Bash(node scripts/multi-model/consensus-review.js:*), Bash(node scripts/multi-model/log-outcome.js:*), Bash(node .tools/jev-decide.mjs:*), Bash(mkdir -p .temp/jev)
 model: sonnet
+effort: high
 ---
 
 # Multi-Model Consensus

@@ -3,6 +3,7 @@ description: Validate multi-model config and connectivity with a tiny harmless t
 argument-hint: (no arguments)
 allowed-tools: Bash(node scripts/multi-model/config-check.js:*)
 model: haiku
+effort: medium
 ---
 
 # Multi-Model Config Check

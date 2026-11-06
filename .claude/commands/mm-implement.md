@@ -3,6 +3,7 @@ description: Generate a first-pass unified diff from the configured implementati
 argument-hint: [task-description] --files path1,path2 [--apply]
 allowed-tools: Read, Glob, Grep, Bash(node scripts/multi-model/cheap-implement.js:*), Bash(node scripts/multi-model/apply-guarded-diff.js:*), Bash(git diff:*), Bash(git status:*), Bash(node scripts/multi-model/log-outcome.js:*)
 model: sonnet
+effort: medium
 ---
 
 # Multi-Model Implementation Draft

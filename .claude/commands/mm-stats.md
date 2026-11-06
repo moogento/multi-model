@@ -3,6 +3,7 @@ description: Compare DeepSeek/GLM/etc keep-vs-drop rates and effective cost-per-
 argument-hint: [--by-command] [--reasons] [--since 30d] [--all-repos path1,path2] [--json]
 allowed-tools: Bash(node scripts/multi-model/outcome-stats.js:*)
 model: haiku
+effort: medium
 ---
 
 # Multi-Model Outcome Stats

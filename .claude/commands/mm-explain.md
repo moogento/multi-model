@@ -3,6 +3,7 @@ description: Get a concise technical explanation of selected files/functions fro
 argument-hint: --files path1,path2 [--symbol name]
 allowed-tools: Read, Glob, Grep, Bash(node scripts/multi-model/explain.js:*), Bash(node scripts/multi-model/log-outcome.js:*)
 model: haiku
+effort: medium
 ---
 
 # Multi-Model Explain (read-only)

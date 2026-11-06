@@ -3,6 +3,7 @@ description: Get alternative first-pass implementations from DeepSeek and GLM in
 argument-hint: [task-description] --files path1,path2
 allowed-tools: Read, Glob, Grep, Bash(node scripts/multi-model/alt-implement.js:*), Bash(node scripts/multi-model/apply-guarded-diff.js:*), Bash(node scripts/multi-model/log-outcome.js:*)
 model: sonnet
+effort: medium
 ---
 
 # Multi-Model Alternative Implementations
